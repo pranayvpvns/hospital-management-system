@@ -111,19 +111,7 @@ const MyProfile = () => {
     }
   };
 
-  const handleDeleteAccount = async () => {
-    setDeleting(true);
-    try {
-      await authAPI.deleteAccount();
-      // Use the logout function from context
-      const { logout } = useAuth; // Wait, I need to get logout from useAuth.
-      // I'll call window.location.href = '/login' directly or use context
-    } catch (err) {
-      console.error('Failed to delete account:', err);
-      alert('Failed to delete account');
-      setDeleting(false);
-    }
-  };
+
 
   const age = calculateAge(formData.dob);
   const isProfileIncomplete = !formData.gender || !formData.blood_group || !formData.dob;
