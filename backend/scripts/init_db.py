@@ -31,11 +31,11 @@ def seed_data():
         # --- Users ---
         print("👤 Seeding users...")
         admin = User(email='admin@mnh.com', name='Dr. Admin Kumar', role='admin')
-        admin.set_password('admin123')
+        admin.set_password('dummy_admin_pwd')
         db.session.add(admin)
 
         doctor1 = User(email='doctor@mnh.com', name='Dr. Priya Sharma', role='doctor')
-        doctor1.set_password('doctor123')
+        doctor1.set_password('dummy_doctor_pwd')
         db.session.add(doctor1)
 
         patients_data = [
@@ -49,7 +49,7 @@ def seed_data():
         patient_objs = []
         for name, email, age, gender, bg, bmi in patients_data:
             u = User(email=email, name=name, role='patient')
-            u.set_password('patient123')
+            u.set_password('dummy_patient_pwd')
             db.session.add(u)
             db.session.flush()
             p = Patient(user_id=u.id, age=age, gender=gender, blood_group=bg, bmi=bmi,

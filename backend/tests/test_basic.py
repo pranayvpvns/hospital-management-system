@@ -36,7 +36,7 @@ def test_register_and_login(client):
     # Register
     reg = client.post('/api/auth/register', json={
         'email': 'test_basic@hospital.com',
-        'password': 'test123',
+        'password': 'dummy_pwd',
         'name': 'Test User',
         'role': 'patient'
     })
@@ -45,7 +45,7 @@ def test_register_and_login(client):
     # Login
     login = client.post('/api/auth/login', json={
         'email': 'test_basic@hospital.com',
-        'password': 'test123'
+        'password': 'dummy_pwd'
     })
     assert login.status_code == 200
     data = login.json()

@@ -9,8 +9,8 @@ load_dotenv(os.path.join(BASE_DIR, '..', 'azure', '.env'))
 
 
 class Config:
-    SECRET_KEY: str = os.getenv('SECRET_KEY', 'mnh-hospital-secret-key-2024')
-    JWT_SECRET_KEY: str = os.getenv('JWT_SECRET_KEY', 'mnh-jwt-secret-key-2024')
+    SECRET_KEY: str = os.getenv('SECRET_KEY', 'dev_default_key')
+    JWT_SECRET_KEY: str = os.getenv('JWT_SECRET_KEY', 'dev_jwt_key')
     JWT_ALGORITHM: str = "HS256"
     JWT_ACCESS_TOKEN_EXPIRE_SECONDS: int = 86400  # 24 hours
 
